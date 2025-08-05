@@ -1,15 +1,13 @@
-import "@/styles/globals.css";
-import {
-	type PropsWithChildren,
-	unstable_ViewTransition as ViewTransition,
-} from "react";
+import type { PropsWithChildren } from "react";
 import type { Metadata } from "next";
-import { manrope } from "@/lib/fonts";
-import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
+import { Navbar } from "@/components/navbar";
 
 export const metadata: Metadata = {
-	title: siteConfig.title,
+	title: {
+		default: "Home",
+		template: "%s | Home",
+	},
 	description: siteConfig.description,
 	appleWebApp: {
 		title: siteConfig.name,
@@ -30,17 +28,11 @@ export const metadata: Metadata = {
 	creator: siteConfig.creator,
 };
 
-export default function RootLayout({ children }: PropsWithChildren) {
+export default function HomeLayout({ children }: PropsWithChildren) {
 	return (
-		<html lang="en" suppressHydrationWarning>
-			<body
-				className={cn(
-					"bg-neutral-50 text-neutral-950 antialiased",
-					manrope.className,
-				)}
-			>
-				<ViewTransition>{children}</ViewTransition>
-			</body>
-		</html>
+		<div className="min-h-screen flex flex-col">
+			<Navbar />
+			{children}
+		</div>
 	);
 }
