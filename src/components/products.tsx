@@ -1,11 +1,8 @@
 import { ProductList } from "./product-list";
-import type { Product } from "@/types/product";
+import { getProducts } from "@/lib/get-products";
 
 export async function Products() {
-	const response = await fetch("https://fakestoreapi.com/products", {
-		cache: "force-cache",
-	});
-	const data = (await response.json()) as Product[];
+	const products = await getProducts();
 
-	return <ProductList products={data} />;
+	return <ProductList products={products} />;
 }
