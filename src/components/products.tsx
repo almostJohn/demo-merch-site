@@ -18,7 +18,7 @@ function ProductListSkeleton() {
 			{Array.from({ length: 20 }).map((_, index) => (
 				<div
 					key={index + 1}
-					className="block rounded-lg h-82 w-full bg-muted duration-300 animate-pulse"
+					className="block rounded-lg h-82 w-full bg-accent duration-300 animate-pulse"
 				/>
 			))}
 		</div>
