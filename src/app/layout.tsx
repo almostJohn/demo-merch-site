@@ -1,8 +1,5 @@
 import "@/styles/globals.css";
-import {
-	type PropsWithChildren,
-	unstable_ViewTransition as ViewTransition,
-} from "react";
+import type { PropsWithChildren } from "react";
 import type { Metadata } from "next";
 import { manrope } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
@@ -35,11 +32,11 @@ export default function RootLayout({ children }: PropsWithChildren) {
 		<html lang="en" suppressHydrationWarning>
 			<body
 				className={cn(
-					"bg-neutral-50 text-neutral-950 antialiased",
+					"bg-background text-foreground antialiased",
 					manrope.className,
 				)}
 			>
-				<ViewTransition>{children}</ViewTransition>
+				{children}
 			</body>
 		</html>
 	);
