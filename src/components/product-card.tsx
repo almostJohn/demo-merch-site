@@ -12,7 +12,7 @@ type ProductCardProps = {
 
 export function ProductCard({ product }: ProductCardProps) {
 	return (
-		<div className="relative group cursor-pointer w-full shadow-lg overflow-hidden rounded-lg flex flex-col h-full">
+		<div className="relative group cursor-pointer w-full shadow-xl overflow-hidden border bg-muted rounded-lg flex flex-col h-full">
 			<div className="aspect-square relative shrink-0 flex items-center justify-center p-4">
 				<Image
 					src={product.images[0]}
