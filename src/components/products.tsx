@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { ProductList } from "./product-list";
-import { getProducts } from "@/lib/get-products";
+import { getProducts } from "@/data/get-products";
 
 export async function Products() {
 	const products = await getProducts();
@@ -18,7 +18,7 @@ function ProductListSkeleton() {
 			{Array.from({ length: 20 }).map((_, index) => (
 				<div
 					key={index + 1}
-					className="block rounded-lg h-82 w-full bg-accent duration-300 animate-pulse"
+					className="block rounded-lg h-82 w-full bg-accent animate-pulse"
 				/>
 			))}
 		</div>

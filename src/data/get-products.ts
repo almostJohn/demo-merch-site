@@ -18,7 +18,5 @@ export async function getProducts() {
 
 	const data = await Promise.all(responses.map((response) => response.json()));
 
-	const allProducts = data.flatMap((data) => data.products) as Product[];
-
-	return allProducts;
+	return data.flatMap((data) => data.products) as Product[];
 }
